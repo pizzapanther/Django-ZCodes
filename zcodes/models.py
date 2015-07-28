@@ -19,3 +19,7 @@ class ZipCode (models.Model):
   def __str__ (self):
     return self.code
     
+  @staticmethod
+  def autocomplete_search_fields():
+    return ("id__iexact", "code__icontains", "city", "state", "timezone", "country")
+    
