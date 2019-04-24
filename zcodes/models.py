@@ -7,8 +7,6 @@ class ZipCode (models.Model):
   state = models.CharField(max_length=2, blank=True, null=True)
   timezone = models.CharField(max_length=25, blank=True, null=True)
   location = models.PointField(null=True, blank=True)
-
-  objects = models.GeoManager()
   
   class Meta:
     unique_together = ('code', 'country')
